@@ -25,19 +25,119 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.loadBack {
+  background-color: white;
+  width: 100%;
+  position: inherit;
+  height: 100vh;
+}
+.loadCont {
+    position: absolute;
+    height: 50px;
+    width: 135px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+div div.ball {
+    width: 20px;
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.ball-one {
+    background-color: #e47194;
+    animation: jump .5s ease 0s infinite alternate;
+}
+
+.ball-two {
+    background-color: black;
+    animation: jump .5s ease .15s infinite alternate;
+}
+
+.ball-three {
+    background-color: #e47194;
+    animation: jump .5s ease .25s infinite alternate;
+}
+
+.ball-four {
+    background-color: black;
+    animation: jump .5s ease .35s infinite alternate;
+}
+
+.shadow {
+    position: relative;
+    opacity: .1;
+    bottom: 20px;
+    width: 20px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    margin: 5px;
+}
+
+.shadow-one {
+    animation: shrink .5s ease .0s infinite alternate;
+}
+
+.shadow-two {
+    animation: shrink .5s ease .15s infinite alternate;
+}
+
+.shadow-three {
+    animation: shrink .5s ease .25s infinite alternate;
+}
+
+.shadow-four {
+    animation: shrink .5s ease .35s infinite alternate;
+}
+
+@keyframes jump {
+    0% {transform: scaleY(.8);}
+    100% {
+        transform: translateY(-70px);
+    }   
+}
+
+@keyframes shrink {
+    100% {
+        transform: scaleX(.5);
+        opacity: .01;
+    }    
+}
+
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root">
+      <div class="loadBack">
+        <div class="loadCont">
+          <div class="ball ball-one"></div>
+          <div class="ball ball-two"></div>
+          <div class="ball ball-three"></div>
+          <div class="ball ball-four"></div>
+          <div class="shadow shadow-one"></div>
+          <div class="shadow shadow-two"></div>
+          <div class="shadow shadow-three"></div>
+          <div class="shadow shadow-four"></div>
+      </div>
+      </div>
+    </div>
   </body>
 </html>
